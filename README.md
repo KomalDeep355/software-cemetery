@@ -57,7 +57,7 @@ The week 4 theme asks for something spooky, or something that honors the past in
 
 | | |
 |---|---|
-| **Live demo** | `https://software-cemetery.onrender.com` |
+| **Live demo** | `(https://software-cemetery.onrender.com)` |
 | **DEV post** | `<ADD YOUR DEV POST URL HERE>` |
 
 The app also ships an **Illustrative sample case** (clearly labelled synthetic, not real GitHub data) so the UI can be explored with no token and no internet.
