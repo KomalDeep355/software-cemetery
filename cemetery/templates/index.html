@@ -1,0 +1,675 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101713">
+  <meta name="description" content="An evidence-first, nostalgic archive of open-source projects and the stories their public GitHub records tell.">
+  <title>The Software Cemetery — FOSS, remembered</title>
+  <link rel="stylesheet" href="/static/cemetery.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#home" aria-label="The Software Cemetery home">
+      <span class="brand-mark">✳</span>
+      <span>
+        <b>SOFTWARE</b>
+        <small>CEMETERY / FOSS ARCHIVE</small>
+      </span>
+    </a>
+
+    <div class="side-label">THE ARCHIVE</div>
+
+    <nav class="side-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home"><span>⌂</span> Home <kbd>01</kbd></a>
+      <a class="nav-link" href="#investigate"><span>⌕</span> Investigate <kbd>02</kbd></a>
+      <a class="nav-link" href="#casefile"><span>▤</span> Case file <kbd>03</kbd></a>
+      <a class="nav-link" href="#explorer"><span>▦</span> Case explorer <kbd>04</kbd></a>
+      <a class="nav-link" href="#compare"><span>⇄</span> Compare repos <kbd>05</kbd></a>
+      <a class="nav-link" href="#method"><span>◉</span> How it works <kbd>06</kbd></a>
+      <a class="nav-link" href="#pricing"><span>＄</span> Pricing concepts <kbd>07</kbd></a>
+      <a class="nav-link" href="#about"><span>✳</span> About the archive <kbd>08</kbd></a>
+    </nav>
+
+    <div class="sidebar-note">
+      <div class="live-dot"></div>
+      <span>ARCHIVE STATUS: ONLINE</span>
+      <p>Not every quiet repository is dead. We read the receipts before writing the eulogy.</p>
+    </div>
+
+    <div class="sidebar-bottom">
+      <span>EST. 2026</span>
+      <span>OPEN SOURCE FOREVER</span>
+    </div>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+
+      <div class="crumb">
+        <span>FOSS ARCHIVE</span>
+        <span class="crumb-slash">/</span>
+        <span id="crumbCurrent">HOME</span>
+      </div>
+
+      <div class="topbar-right">
+        <span class="terminal-chip">● SYSTEM NOMINAL</span>
+        <button class="top-help" id="helpTop">
+          HOW MAY I HELP YOU? <span>↗</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="home">
+
+      <!-- HERO -->
+      <section class="hero section-anchor">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span>
+            AN OPEN-SOURCE MEMORIAL SERVICE
+          </div>
+
+          <h1>Every repo<br>leaves <em>receipts.</em></h1>
+
+          <p class="hero-lede">
+            A nostalgic little archive for the big, tiny, brilliant, chaotic,
+            and occasionally abandoned things we build in public.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#investigate">
+              Open a case <span>↗</span>
+            </a>
+            <button class="button button-ghost" id="sampleButton">
+              View sample case <span>▣</span>
+            </button>
+          </div>
+
+          <div class="hero-footnote">
+            <span class="star-symbol">✳</span>
+            Built for FOSS. Written with receipts. A little dramatic by design.
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Pixel-art memorial garden illustration" role="img">
+          <div class="art-sun"></div>
+          <div class="art-moon">✳</div>
+          <div class="pixel-cloud cloud-a"></div>
+          <div class="pixel-cloud cloud-b"></div>
+          <div class="art-ground"></div>
+          <div class="tomb tomb-one"><span>404</span><i>✳</i></div>
+          <div class="tomb tomb-two"><span>R.I.P.</span><i>;</i></div>
+          <div class="tomb tomb-three"><span>TODO</span><i>?</i></div>
+          <div class="art-flower flower-one">✿</div>
+          <div class="art-flower flower-two">✿</div>
+          <div class="art-flower flower-three">✿</div>
+          <div class="art-caption">FIG. 01 — THE QUIET GARDEN</div>
+        </div>
+      </section>
+
+      <!-- TICKER -->
+      <section class="ticker" aria-label="Archive motto">
+        <div>
+          READ THE RECEIPTS <span>✳</span>
+          RESPECT THE MAINTAINERS <span>✳</span>
+          INACTIVITY ≠ ABANDONMENT <span>✳</span>
+          FOSS IS FOREVER <span>✳</span>
+          READ THE RECEIPTS <span>✳</span>
+          RESPECT THE MAINTAINERS <span>✳</span>
+        </div>
+      </section>
+
+      <!-- INVESTIGATION -->
+      <section class="section-block" id="investigate">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">01 / START AN INVESTIGATION</div>
+            <h2>Who are we remembering?</h2>
+          </div>
+          <span class="section-index">CASE INTAKE // 001</span>
+        </div>
+
+        <div class="investigate-layout">
+          <div class="intake-card">
+            <div class="card-topline">
+              <span>NEW CASE FILE</span>
+              <span class="tiny-led"></span>
+            </div>
+
+            <form id="inspectForm">
+              <label for="repoInput">GITHUB REPOSITORY OR URL</label>
+
+              <div class="input-wrap">
+                <span class="input-prefix">gh://</span>
+                <input
+                  id="repoInput"
+                  name="repo"
+                  type="text"
+                  placeholder="owner/repository"
+                  autocomplete="url"
+                  required
+                  maxlength="300"
+                >
+                <button
+                  class="input-submit"
+                  type="submit"
+                  aria-label="Investigate repository"
+                >↗</button>
+              </div>
+
+              <div class="form-options">
+                <label class="toggle-label">
+                  <input type="checkbox" id="useLlm">
+                  <span class="fake-toggle"></span>
+                  <span>Ask local Gemma/Ollama to write the eulogy</span>
+                </label>
+                <span class="tiny-note">OPTIONAL</span>
+              </div>
+
+              <p class="form-help">
+                Public GitHub metadata only. Local AI is optional;
+                the evidence-backed template works without it.
+              </p>
+
+              <!-- EXISTING QUICK PICKS -->
+              <div class="quick-picks">
+                <span>TRY A CASE:</span>
+                <button type="button" data-repo="pallets/flask">pallets/flask</button>
+                <button type="button" data-repo="psf/requests">psf/requests</button>
+                <button type="button" data-repo="numpy/numpy">numpy/numpy</button>
+              </div>
+
+              <!-- NEW REPOSITORY PICKER -->
+              <div class="repository-picker">
+
+                <button
+                  type="button"
+                  class="add-repository-button"
+                  id="addRepositoryButton"
+                  aria-expanded="false"
+                  aria-controls="repositorySuggestions"
+                >
+                  <span class="picker-plus">＋</span>
+                  <span>ADD REPOSITORY</span>
+                  <span class="picker-arrow">⌄</span>
+                </button>
+
+                <div
+                  class="repository-suggestions"
+                  id="repositorySuggestions"
+                  hidden
+                >
+                  <div class="suggestions-heading">
+                    <span>THE ARCHIVE'S SUGGESTIONS</span>
+                    <span class="suggestions-count">6 REPOSITORIES</span>
+                  </div>
+
+                  <!-- ARCHIVED -->
+                  <div class="suggestion-group">
+                    <div class="suggestion-group-heading">
+                      <span class="category-dot archived-dot"></span>
+                      <span>ARCHIVED</span>
+                      <small>NO LONGER ACTIVELY DEVELOPED</small>
+                    </div>
+
+                    <div class="suggestion-list">
+                      <button
+                        type="button"
+                        class="suggestion-item"
+                        data-repo="googlearchive/iosched"
+                      >
+                        <span class="suggestion-name">googlearchive/iosched</span>
+                        <span class="suggestion-action">USE ↗</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="suggestion-item"
+                        data-repo="googlearchive/android-architecture"
+                      >
+                        <span class="suggestion-name">googlearchive/android-architecture</span>
+                        <span class="suggestion-action">USE ↗</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- QUIET / UNMAINTAINED -->
+                  <div class="suggestion-group">
+                    <div class="suggestion-group-heading">
+                      <span class="category-dot quiet-dot"></span>
+                      <span>QUIET / UNMAINTAINED</span>
+                      <small>WORTH A CLOSER LOOK</small>
+                    </div>
+
+                    <div class="suggestion-list">
+                      <button
+                        type="button"
+                        class="suggestion-item"
+                        data-repo="ariya/phantomjs"
+                      >
+                        <span class="suggestion-name">ariya/phantomjs</span>
+                        <span class="suggestion-action">USE ↗</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- ACTIVE -->
+                  <div class="suggestion-group">
+                    <div class="suggestion-group-heading">
+                      <span class="category-dot active-dot"></span>
+                      <span>ACTIVE</span>
+                      <small>ONGOING PROJECTS</small>
+                    </div>
+
+                    <div class="suggestion-list">
+                      <button
+                        type="button"
+                        class="suggestion-item"
+                        data-repo="pallets/flask"
+                      >
+                        <span class="suggestion-name">pallets/flask</span>
+                        <span class="suggestion-action">USE ↗</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="suggestion-item"
+                        data-repo="psf/requests"
+                      >
+                        <span class="suggestion-name">psf/requests</span>
+                        <span class="suggestion-action">USE ↗</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        class="suggestion-item"
+                        data-repo="numpy/numpy"
+                      >
+                        <span class="suggestion-name">numpy/numpy</span>
+                        <span class="suggestion-action">USE ↗</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <p class="suggestions-footnote">
+                    These are curated examples, not live status guarantees.
+                    The investigation checks the repository's actual public signals.
+                  </p>
+                </div>
+              </div>
+              <!-- END NEW REPOSITORY PICKER -->
+
+            </form>
+
+            <div id="formError" class="form-error" role="alert" hidden></div>
+          </div>
+
+          <aside class="intake-aside">
+            <div class="aside-symbol">⌘</div>
+            <h3>Not a death certificate.</h3>
+            <p>
+              Think of this as a lovingly nosy librarian, not a coroner.
+              We look at public signals, show our sources, and never pretend
+              silence tells the whole story.
+            </p>
+            <div class="aside-rule"></div>
+            <div class="aside-stat">
+              <span>DATA SOURCE</span>
+              <b>GitHub REST API</b>
+            </div>
+            <div class="aside-stat">
+              <span>DEFAULT MODE</span>
+              <b>Evidence-first / no LLM</b>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- CASE FILE -->
+      <section class="section-block case-section" id="casefile">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">02 / THE CASE FILE</div>
+            <h2>The story behind the stars.</h2>
+          </div>
+          <span class="section-index" id="caseStatus">AWAITING A CASE</span>
+        </div>
+
+        <div id="caseEmpty" class="empty-case">
+          <div class="empty-stamp">NO CASE<br>OPENED</div>
+          <div>
+            <h3>The archive is listening.</h3>
+            <p>
+              Enter a public repository above or open the sample case to see
+              how the evidence, vitality score, and repo story fit together.
+            </p>
+            <a href="#investigate">Start an investigation ↗</a>
+          </div>
+          <span class="empty-flower">✳</span>
+        </div>
+
+        <div id="caseResult" hidden></div>
+      </section>
+
+      <!-- CASE EXPLORER -->
+      <section class="section-block" id="explorer">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">03 / YOUR LOCAL ARCHIVE</div>
+            <h2>Case files you have opened.</h2>
+          </div>
+          <span class="section-index">STORED IN THIS BROWSER</span>
+        </div>
+
+        <div class="explorer-toolbar">
+          <div>
+            <h3>Recently investigated</h3>
+            <p>
+              Only summaries of cases you open in this browser are saved here.
+              Nothing is uploaded to a separate cemetery database.
+            </p>
+          </div>
+
+          <div class="explorer-controls">
+            <input
+              id="historySearch"
+              type="search"
+              placeholder="Filter saved cases…"
+              aria-label="Filter saved cases"
+            >
+            <button id="clearHistory" class="mini-button" type="button">
+              CLEAR LOCAL ARCHIVE
+            </button>
+          </div>
+        </div>
+
+        <div id="historyList" class="history-list">
+          <div class="history-empty">
+            <span>▤</span>
+            <p>No case files have been saved in this browser yet.</p>
+            <a href="#investigate">Open your first case ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPARE -->
+      <section class="section-block" id="compare">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">03 / THE FAMILY PLOT</div>
+            <h2>Compare the quiet ones.</h2>
+          </div>
+          <span class="section-index">2–5 REPOSITORIES</span>
+        </div>
+
+        <div class="compare-card">
+          <div class="compare-copy">
+            <span class="compare-icon">⇄</span>
+            <h3>Same cemetery. Different stories.</h3>
+            <p>
+              Compare vitality scores and last known activity across a handful
+              of public repositories. The comparison is a triage aid—not a verdict.
+            </p>
+          </div>
+
+          <form id="compareForm" class="compare-form">
+            <label for="compareRepos">REPOSITORIES, ONE PER LINE</label>
+            <textarea
+              id="compareRepos"
+              rows="4"
+              placeholder="pallets/flask&#10;psf/requests"
+              required
+            ></textarea>
+            <button class="button button-primary" type="submit">
+              Compare records ↗
+            </button>
+            <div id="compareError" class="form-error" role="alert" hidden></div>
+          </form>
+
+          <div id="compareResults" class="compare-results" hidden></div>
+        </div>
+      </section>
+
+      <!-- METHOD -->
+      <section class="section-block" id="method">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">04 / OUR METHOD</div>
+            <h2>Receipts before romance.</h2>
+          </div>
+          <span class="section-index">HOW THE ARCHIVE WORKS</span>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card">
+            <span class="method-num">01</span>
+            <div class="method-icon">⌕</div>
+            <h3>Collect public traces</h3>
+            <p>
+              Repository metadata, commit timestamps, releases, issues,
+              and contributor samples from GitHub's public API.
+            </p>
+            <span class="method-tag">SOURCE: GITHUB</span>
+          </article>
+
+          <article class="method-card">
+            <span class="method-num">02</span>
+            <div class="method-icon">▥</div>
+            <h3>Read the signals</h3>
+            <p>
+              A transparent heuristic scores observable vitality signals.
+              You can inspect the reasons rather than trusting a mystery number.
+            </p>
+            <span class="method-tag">METHOD: EXPLAINABLE</span>
+          </article>
+
+          <article class="method-card">
+            <span class="method-num">03</span>
+            <div class="method-icon">✎</div>
+            <h3>Write a kind eulogy</h3>
+            <p>
+              A funny, lightly sarcastic life story with evidence markers.
+              It never invents a maintainer's intentions or claims a repo is dead.
+            </p>
+            <span class="method-tag">VOICE: FOSS WITH FEELINGS</span>
+          </article>
+        </div>
+
+        <div class="warning-strip">
+          <span>!</span>
+          <p>
+            <b>A quiet repo is not necessarily an abandoned repo.</b>
+            It might be stable, maintained elsewhere, or intentionally dormant.
+            This archive reports signals—not human intent.
+          </p>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="section-block" id="pricing">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">06 / IF THE ARCHIVE EVER GROWS UP</div>
+            <h2>Pricing, in a hypothetical universe.</h2>
+          </div>
+          <span class="section-index">CONCEPT ONLY · NOT FOR SALE</span>
+        </div>
+
+        <p class="pricing-intro">
+          The hackathon version is free to run locally. These are illustrative
+          future product tiers—not active subscriptions, checkout links,
+          or a promise of current service limits.
+        </p>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <div class="price-kicker">01 / THE WALK-IN</div>
+            <h3>Graveyard</h3>
+            <div class="price">$0 <small>/ forever</small></div>
+            <p>For curious maintainers and weekend archaeologists.</p>
+            <ul>
+              <li>Basic evidence-backed investigations</li>
+              <li>Vitality score and explanations</li>
+              <li>Story with source links</li>
+              <li>Markdown export concept</li>
+            </ul>
+            <span class="price-stamp">COMMUNITY FIRST</span>
+          </article>
+
+          <article class="price-card featured-price">
+            <div class="price-kicker">02 / THE REGULAR</div>
+            <h3>Archivist</h3>
+            <div class="price">$5 <small>/ month · proposed</small></div>
+            <p>For people with more repos than free Saturdays.</p>
+            <ul>
+              <li>Higher monthly investigation allowance</li>
+              <li>Multi-repository comparisons</li>
+              <li>Saved snapshots and trends</li>
+              <li>Batch report exports</li>
+            </ul>
+            <span class="price-stamp">ILLUSTRATIVE</span>
+          </article>
+
+          <article class="price-card">
+            <div class="price-kicker">03 / THE FAMILY PLOT</div>
+            <h3>Conservatory</h3>
+            <div class="price">$19 <small>/ month · proposed</small></div>
+            <p>For teams who would like fewer surprise fossils.</p>
+            <ul>
+              <li>Shared watchlists</li>
+              <li>Maintenance-risk alerts</li>
+              <li>Team reports and scheduled scans</li>
+              <li>Higher usage limits</li>
+            </ul>
+            <span class="price-stamp">ILLUSTRATIVE</span>
+          </article>
+
+          <article class="price-card">
+            <div class="price-kicker">04 / THE INSTITUTION</div>
+            <h3>Research</h3>
+            <div class="price">Custom</div>
+            <p>For open-source foundations and research teams.</p>
+            <ul>
+              <li>Bulk analysis and API access</li>
+              <li>Configurable data retention</li>
+              <li>Research exports and evaluation sets</li>
+              <li>Deployment options</li>
+            </ul>
+            <span class="price-stamp">DISCOVERY PHASE</span>
+          </article>
+        </div>
+
+        <div class="cost-note">
+          <span>₿</span>
+          <p>
+            <b>Actual build costs:</b>
+            public GitHub API use and local Ollama can start at $0.
+            Hosting, custom domains, storage, and hosted model inference may cost extra.
+            Check provider pricing before deploying; free tiers have limits.
+          </p>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section-block about-block" id="about">
+        <div class="about-copy">
+          <div class="eyebrow">05 / WHY THIS EXISTS</div>
+          <h2>Open source is made of people.</h2>
+          <p>
+            Every repo began with a problem, a curiosity, a late-night README,
+            or a suspiciously ambitious TODO. The Software Cemetery is a small
+            nostalgic FOSS archive that treats public code history as a story
+            worth understanding—not an excuse to dunk on maintainers.
+          </p>
+          <p>
+            Inspired by old terminal screens, community archives, and the strange
+            tenderness of finding a forgotten project that once mattered to somebody.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-card-mark">✳</div>
+          <div class="about-card-title">A NOTE FROM THE ARCHIVIST</div>
+          <p>“We are all one abandoned side project away from becoming a case study.”</p>
+          <span>— THE ARCHIVIST, PROBABLY</span>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-brand">✳ THE SOFTWARE CEMETERY</div>
+        <div>MADE WITH CARE FOR THE FOSS COMMUNITY</div>
+        <div>© 2026 · NO MAINTAINERS WERE JUDGED BY A BOT</div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- FLOATING HELP BUTTON -->
+  <button
+    class="help-fab"
+    id="helpFab"
+    aria-label="How may I help you?"
+    title="How may I help you?"
+  >
+    <span class="help-spark">✳</span>
+    <span class="help-label">HOW MAY I HELP YOU?</span>
+    <span class="help-arrow">↗</span>
+  </button>
+
+  <!-- ARCHIVIST ASSISTANT -->
+  <div class="help-overlay" id="helpOverlay" hidden>
+    <section
+      class="help-window"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="helpTitle"
+    >
+      <header class="help-head">
+        <div class="help-avatar">✳</div>
+        <div>
+          <h2 id="helpTitle">How may I help you?</h2>
+          <p>THE ARCHIVIST IS ON DUTY</p>
+        </div>
+        <button id="closeHelp" class="close-help" aria-label="Close help">×</button>
+      </header>
+
+      <div class="help-body">
+        <div class="chat-bubble bot-bubble">
+          Welcome to the archive, friend. I can help you investigate a repo,
+          understand the vitality score, or explain what these receipts mean.
+          I promise not to say “have you tried turning the maintainer off and on again.”
+        </div>
+
+        <div class="help-prompts">
+          <button data-help="score">What does the score mean?</button>
+          <button data-help="abandoned">Is this repo abandoned?</button>
+          <button data-help="privacy">What data do you collect?</button>
+          <button data-help="llm">How do I use local AI?</button>
+        </div>
+
+        <div id="helpAnswer" class="chat-bubble bot-bubble answer-bubble" hidden></div>
+      </div>
+
+      <form id="helpForm" class="help-input">
+        <input
+          id="helpQuestion"
+          type="text"
+          placeholder="Ask the archivist…"
+          aria-label="Ask the archivist"
+        >
+        <button type="submit" aria-label="Send question">↗</button>
+      </form>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="/static/cemetery.js" defer></script>
+</body>
+</html>
